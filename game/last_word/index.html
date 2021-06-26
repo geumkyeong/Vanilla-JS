@@ -9,8 +9,16 @@
 <body>
 
     <script>
-        var word = '책상';
-        var answer = prompt(word);
+        var word = '책상'; //첫 제시어
+        var answer = prompt(word); //대답
+
+        // 제시어 끝과 대답의 첫글자가 같을 때
+        if(word[word.length-1] === answer[0]) {
+            alert('정답 입니다!')
+            word = answer; //대답 -> 제시어로 대체
+        } else {
+            alert('틀렸습니다!')
+        }
     </script>
 </body>
 </html>
