@@ -8,17 +8,28 @@
 </head>
 <body>
     <script>
-        var a = Math.ceil(Math.random()*9);
-        var b = Math.ceil(Math.random()*9);
+        while(true){ //계속 반복
+            var flag = true;
+            //새로운 수 뽑기
+            var a = Math.ceil(Math.random()*9);
+            var b = Math.ceil(Math.random()*9);
 
-        var answer = a*b;
-        var number = prompt(String(a)+'곱하기'+String(b)+'는?');
+            var answer = a*b; //정답
+            var number = prompt(String(a)+' 곱하기'+String(b)+' 는?'); //대답
 
-        if(answer === Number(number)) {
-            console.log('딩동댕!')
-        } else {
-            console.log('땡! 다시 입력하세요')
+            while(flag){
+                //정답과 비교
+                if(answer === Number(number)) {
+                    console.log('딩동댕!')
+                    flag = false; //반복문 벗어나기
+                } else {
+                    console.log('땡! 다시 입력하세요')
+                    //대답 다시 받기
+                    number = prompt(String(a)+' 곱하기'+String(b)+' 는?');
+                }
+            }
         }
+       
     </script>
 </body>
 </html>
