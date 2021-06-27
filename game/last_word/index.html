@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Word</title>
+</head>
+<body>
+
+    <script>
+        var word = '책상'; //첫 제시어
+        
+        for(let i = 0; i < 3; i++) {
+            var answer = prompt(word); //대답
+             // 제시어 끝과 대답의 첫글자가 같을 때
+            if(word[word.length-1] === answer[0]) {
+                alert('정답 입니다!')
+                word = answer; //대답 -> 제시어로 대체
+            } else {
+                alert('틀렸습니다! 다시 맞춰주세요')
+            }
+        }
+       
+    </script>
+</body>
+</html>
