@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gugudan</title>
+</head>
+<body>
+    <script>
+        var a = Math.ceil(Math.random()*9);
+        var b = Math.ceil(Math.random()*9);
+
+        var answer = a*b;
+        var number = prompt(String(a)+'곱하기'+String(b)+'는?');
+
+        if(answer === Number(number)) {
+            console.log('딩동댕!')
+        } else {
+            console.log('땡! 다시 입력하세요')
+        }
+    </script>
+</body>
+</html>
