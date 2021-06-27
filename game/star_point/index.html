@@ -11,9 +11,9 @@
         var star = '*';
         var empty = '';
 
-        for(let i = 0; i < 5; i++) {
+        for(let i = 5; i >= 1; i--) {
             //별은 한 개씩 감소, 공백은 한 개씩 증가.
-            console.log(empty.repeat(i) + star.repeat(5-i))
+            console.log(star.repeat(i) + empty.repeat(5-i))
         }
     </script>
 </body>
