@@ -20,16 +20,46 @@ var input = document.createElement('input');
 form.append(input);
 
 var button = document.createElement('button');
+button.textContent = '입력';
 form.append(button);
 
+console.log(result);
+
 form.addEventListener('submit', function(e) {
-    e.preventDefalt();
-    var answer = input.value;
-    //답을 맞추면
-    if(answer === result)){
-       
-
+    e.preventDefault();
+    
+    var answer = input.value; //string type
+    console.log(input.value);
+    
+    if(answer === result.join('')){ //홈런
+        h1.textContent = '홈런!';
+        input.value = '';
+        input.focus();
+        //새로운 수 뽑기
+        data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        result = [];
+        for(var i = 0; i < 4; i++) {
+            var set = data.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+            result.push(set);
+        }
     } else { //틀리면
+        var array = answer.split('');
+        var strike = 0;
+        var ball = 0;
 
+        for(var i = 0; i < 4;  i++){
+            console.log(result[i], array[i]); //array[i]: string type
+            if(Number(array[i]) === result[i]){
+                strike++;
+                //indexOf(n): n의 인덱스를 return함
+            } else if(result.indexOf(Number(array[i])) > -1) {
+                ball++;
+            }
+        }
+
+        h1.textContent = strike+' 스트라이크 '+ball+' 볼 입니다!';
+        input.value = '';
+        input.focus();
     }
 });
+
