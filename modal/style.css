@@ -44,6 +44,7 @@ button {
   padding: 50px 100px;
 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  animation: fade-in 1s;
 }
 
 .modal__content button {
@@ -53,4 +54,13 @@ button {
 
 .hidden {
   display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
