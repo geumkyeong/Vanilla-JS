@@ -1,0 +1,44 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  all: unset;
+  background-color: cadetblue;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 36px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal__content {
+  position: relative;
+  top: 0;
+  width: 20%;
+  text-align: center;
+  background-color: white;
+  padding: 50px 100px;
+}
+
+.modal__content button {
+  text-align: center;
+  width: 10%;
+}
