@@ -36,6 +36,12 @@ a {
 .navbar__menu li {
   padding: 8px 12px;
 }
+/* 네비게이션 바 메뉴에 갖다대면 */
+.navbar__menu li:hover {
+  /* 배경색 채우기 */
+  background-color: #d49466;
+  border-radius: 4px;
+}
 
 .navbar__icons {
   display: flex;
@@ -46,8 +52,38 @@ a {
 }
 
 .navbar__toggleBtn {
-  /* 뷰포트가 768px 이하인 경우만 보이게*/
   display: none;
   position: absolute;
   right: 32px;
+  font-size: 24px;
+  color: #d49466;
+}
+
+@media screen and (max-width: 768px) {
+  /* 네비게이션바 아이템(로고, 메뉴, 아이콘) 세로로 나열, 시작위치에 정렬 */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* 메뉴 아이템 세로로 나열, 가운데 정렬 */
+  .navbar__menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar__icons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* 뷰포트가 768px 이하일 때 보이게*/
+  .navbar__toggleBtn {
+    display: block;
+  }
 }
