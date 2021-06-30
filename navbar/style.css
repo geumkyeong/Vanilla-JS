@@ -3,21 +3,51 @@ body {
   font-family: "Source Sans Pro";
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 a {
   text-decoration: none;
+  color: white;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #263343;
+  padding: 8px 12px;
+}
+
+.navbar__logo {
+  font-size: 24px;
+}
+
+.navbar__logo i {
+  color: #d49466;
 }
 
 .navbar__menu {
   display: flex;
-  list-style: none;
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
 }
 
 .navbar__icons {
   display: flex;
-  list-style: none;
+}
+
+.navbar__icons li {
+  padding: 8px 12px;
+}
+
+.navbar__toggleBtn {
+  /* 뷰포트가 768px 이하인 경우만 보이게*/
+  display: none;
+  position: absolute;
+  right: 32px;
 }
