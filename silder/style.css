@@ -9,20 +9,28 @@ body {
 }
 
 .slider__item {
-  /* 슬라이더 크기 */
+  /* 슬라이드 크기 */
   width: 100%;
   height: 500px;
   /* 가운데 정렬 */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 슬라이드들을 동일한 위치에 오게하기(겹쳐지게) */
+  position: absolute;
+  top: 0;
   /* 색깔 */
   color: white;
 }
-/* 짝수, 홀수 번째 Item에 스타일 적용 */
+/* 짝수, 홀수 번째 슬라이드에 스타일 적용 */
 .slider__item:nth-child(odd) {
   background-color: #8e44ad;
 }
 .slider__item:nth-child(even) {
   background-color: #3498bd;
+}
+
+/* 특정 슬라이드를 맨 앞으로 가져오기(보이기) */
+.showing {
+  z-index: 1;
 }
