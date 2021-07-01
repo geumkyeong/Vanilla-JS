@@ -1,0 +1,28 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider__item {
+  /* 슬라이더 크기 */
+  width: 100%;
+  height: 500px;
+  /* 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 색깔 */
+  color: white;
+}
+/* 짝수, 홀수 번째 Item에 스타일 적용 */
+.slider__item:nth-child(odd) {
+  background-color: #8e44ad;
+}
+.slider__item:nth-child(even) {
+  background-color: #3498bd;
+}
