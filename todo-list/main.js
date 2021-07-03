@@ -4,10 +4,30 @@ const toDoList = document.querySelector('.js-toDoList');
 
 const TODOS_LIST = 'toDos';
 
-const toDos = [];
+let toDos = [];
 
-// localStorage에 toDos 배열을 저장
-function saveTodos() {
+function deleteToDos(event) {
+    const btn = event.target;
+    // 부모노드인 li 찾기
+    const li = btn.parentNode;
+    //  toDoList에서 li 삭제하기
+    toDoList.removeChild(li);
+
+    // localStorge에서 toDo 삭제하기
+    // filter: Array에서 조건이 맞는 요소들만 return. return된 요소들로 새로운 배열을 만듬.
+    const cleanToDos = toDos.filter(function(toDo) {
+        // 로컬에 저장된 toDo의 id들과 선택된 li요소의 id 비교
+        // 선택된 id와 같은 요소를 제외하고 배열을 만듬.
+        return toDo.id !== Number(li.id);
+    });
+    // toDos 배열을 새로운 배열로 교체 
+    toDos = cleanToDos;
+    // localStorage에 toDos 배열 저장
+    saveToDos();
+}
+
+// localStorage에 toDos 배열 저장
+function saveToDos() {
     // object -> string
     localStorage.setItem(TODOS_LIST, JSON.stringify(toDos));
 }
@@ -24,18 +44,19 @@ function paintToDo(text) {
     li.id = newId; // id
 
     li.appendChild(deleteBtn); // 삭제하는 버튼
-    li.appendChild(span); // todo
+    li.appendChild(span); // 입력창에 작성한 내용
     toDoList.appendChild(li);
 
-    
     const toDoObj = {
         text: text, // 입력창에 작성한 내용
         id: newId // id
     };
     // toDos: 객체 배열
     toDos.push(toDoObj);
-    // localStorage에 저장
-    saveTodos();
+    // localStorage에 toDos 배열 저장 
+    saveToDos();
+
+    deleteBtn.addEventListener('click', deleteToDos);
 }
 
 function handleSubmit(event) {
