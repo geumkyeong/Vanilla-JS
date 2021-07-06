@@ -29,6 +29,14 @@ body {
 ul {
   list-style: none;
 }
+
+button,
+button:focus {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
 /* Header */
 header {
   display: flex;
@@ -63,4 +71,40 @@ header .icons .fa-search {
   height: 100%;
   /* 최대 너비 */
   max-width: 1000px;
+}
+/* Video Info */
+.info {
+  padding: var(--padding);
+}
+
+.info .metaData {
+}
+
+.info .metaData .hashtags {
+  display: flex;
+  color: var(--blue-color);
+  font-size: var(--font-medium);
+}
+
+.info .metaData .hashtags li {
+  padding-right: var(--padding);
+}
+/* title and button */
+.info .metaData .titleNBtn {
+  display: flex;
+}
+
+.info .metaData .title {
+  font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+
+.info .metaData .moreBtn {
+  font-size: var(--font-medium);
+  height: 100%;
+}
+
+.info .metaData .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
 }
