@@ -176,3 +176,50 @@ body > .info {
   color: var(--red-color);
   font-size: var(--font-medium);
 }
+
+/* Up next */
+.upNext {
+  padding: 0 var(--padding);
+}
+/* Up Next title */
+.upNext > .title {
+  display: block;
+  padding-bottom: calc(var(--padding) / 2);
+  font-size: var(--font-medium);
+  color: var(--grey-light-color);
+}
+
+.upNext .item {
+  display: flex;
+}
+/* 썸네일 */
+.upNext .item .img {
+  flex: 1 1 35%;
+  margin-right: calc(var(--padding) / 2);
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+/* 제목, 이름, 조회수 */
+.upNext .item .info {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+}
+
+.upNext .item .info .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey-light-color);
+}
+/* more Button */
+.upNext .item .moreBtn {
+  flex: 1 1 5%;
+  height: 100%;
+}
