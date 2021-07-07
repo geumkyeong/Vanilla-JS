@@ -92,14 +92,26 @@ body .infoNupNext > .info {
   display: flex;
 }
 
-.info .metaData .title {
+.info .metaData .titleNBtn .title {
   font-size: var(--font-medium);
   margin-right: var(--padding);
+}
+
+.info .metaData .titleNBtn .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .info .metaData .moreBtn {
   font-size: var(--font-medium);
   height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metaData .moreBtn.clicked {
+  transform: rotate(180deg);
 }
 
 .info .metaData .views {
@@ -228,6 +240,9 @@ body .infoNupNext > .info {
 .upNext .item .moreBtn {
   flex: 1 1 5%;
   height: 100%;
+}
+
+.upNext .item .moreBtn .fa-caret-down {
 }
 
 .infoNupNext {
