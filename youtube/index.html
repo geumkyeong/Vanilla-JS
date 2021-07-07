@@ -25,61 +25,52 @@
     <section class="player">
         <video controls src="video/demo.mp4" autoplay muted preload="auto"></video>
     </section>
-    <!-- Video Info -->
-    <section class="info">
-        <div class="metaData">
-            <ul class="hashtags">
-                <li>#drawing</li>
-                <li>#colors</li>
-                <li>#stroke</li>
-            </ul>
-            <div class="titleNBtn">
-                <span class="title">
-                    겁내지 않고 그림을 그리는 10가지 방법 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quasi numquam dolorum, consectetur error atque ipsum quidem beatae!
-                </span>
-                <button class="moreBtn">
-                    <i class="fas fa-caret-down"></i>
-                </button>
-            </div>
-            <span class="views">1M views 1 month ago</span>
-        </div>
-        <!-- Action Button -->
-        <ul class="actions">
-            <li><button><i class="active fas fa-thumbs-up"></i><span>1K</span></button></li>
-            <li><button><i class="fas fa-thumbs-down"></i><span>0</span></button></li>
-            <li><button><i class="fas fa-share"></i><span>Share</span></button></li>
-            <li><button><i class="fas fa-plus"></i><span>Save</span></button></li>
-            <li><button><i class="fas fa-flag"></i><span>Report</span></button></li>
-        </ul>
-        <!-- Channel Description -->
-        <div class="channel">
+    <!-- info 와 upNext -->
+    <div class="infoNupNext">
+        <!-- Video Info -->
+        <section class="info">
             <div class="metaData">
-                <img src="image/image1.jpg" alt="profile image">
-                <div class="info">
-                    <span class="name">이연</span>
-                    <span class="subscribers">1M subscribers</span>
-                </div>
-            </div>
-            <button class="subscribe">subscribe</button>
-        </div>
-    </section>
-    <!-- Up next -->
-    <section class="upNext">
-        <span class="title">Up next</span>
-        <ul>
-            <li class="item">
-                <div class="img"><img src="image/thumbnails-0.jpg" alt="video image"></div>
-                    <div class="info">
-                        <span class="title">겁내지 않고 그림을 그리는 10가지 방법</span>
-                        <span class="name">이연</span>
-                        <span class="views">82K views</span>
-                    </div>
+                <ul class="hashtags">
+                    <li>#drawing</li>
+                    <li>#colors</li>
+                    <li>#stroke</li>
+                </ul>
+                <div class="titleNBtn">
+                    <span class="title">
+                        겁내지 않고 그림을 그리는 10가지 방법 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quasi numquam dolorum, consectetur error atque ipsum quidem beatae!
+                    </span>
                     <button class="moreBtn">
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-caret-down"></i>
                     </button>
-            </li>
-            <li class="item">
-                <div class="img"><img src="image/thumbnails-1.png" alt="video image"></div>
+                </div>
+                <span class="views">1M views 1 month ago</span>
+            </div>
+            <!-- Action Button -->
+            <ul class="actions">
+                <li><button><i class="active fas fa-thumbs-up"></i><span>1K</span></button></li>
+                <li><button><i class="fas fa-thumbs-down"></i><span>0</span></button></li>
+                <li><button><i class="fas fa-share"></i><span>Share</span></button></li>
+                <li><button><i class="fas fa-plus"></i><span>Save</span></button></li>
+                <li><button><i class="fas fa-flag"></i><span>Report</span></button></li>
+            </ul>
+            <!-- Channel Description -->
+            <div class="channel">
+                <div class="metaData">
+                    <img src="image/image1.jpg" alt="profile image">
+                    <div class="info">
+                        <span class="name">이연</span>
+                        <span class="subscribers">1M subscribers</span>
+                    </div>
+                </div>
+                <button class="subscribe">subscribe</button>
+            </div>
+        </section>
+        <!-- Up next: 추천 동영상 목록 -->
+        <section class="upNext">
+            <span class="title">Up next</span>
+            <ul>
+                <li class="item">
+                    <div class="img"><img src="image/thumbnails-0.jpg" alt="video image"></div>
                         <div class="info">
                             <span class="title">겁내지 않고 그림을 그리는 10가지 방법</span>
                             <span class="name">이연</span>
@@ -88,20 +79,32 @@
                         <button class="moreBtn">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
-            </li>
-            <li class="item">
-                <div class="img"><img src="image/thumbnails-2.jpg" alt="video image"></div>
-                <div class="info">
-                    <span class="title">겁내지 않고 그림을 그리는 10가지 방법</span>
-                    <span class="name">이연</span>
-                    <span class="views">82K views</span>
-                </div>
-                <button class="moreBtn">
-                    <i class="fas fa-ellipsis-v"></i>
-                </button>
-            </li>
-        </ul>
-    </section>
+                </li>
+                <li class="item">
+                    <div class="img"><img src="image/thumbnails-1.png" alt="video image"></div>
+                            <div class="info">
+                                <span class="title">겁내지 않고 그림을 그리는 10가지 방법</span>
+                                <span class="name">이연</span>
+                                <span class="views">82K views</span>
+                            </div>
+                            <button class="moreBtn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                </li>
+                <li class="item">
+                    <div class="img"><img src="image/thumbnails-2.jpg" alt="video image"></div>
+                    <div class="info">
+                        <span class="title">겁내지 않고 그림을 그리는 10가지 방법</span>
+                        <span class="name">이연</span>
+                        <span class="views">82K views</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

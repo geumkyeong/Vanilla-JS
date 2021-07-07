@@ -72,8 +72,9 @@ header .icons .fa-search {
   /* 최대 너비 */
   max-width: 1000px;
 }
+
 /* Video Info */
-body > .info {
+body .infoNupNext > .info {
   padding: var(--padding);
 }
 
@@ -131,6 +132,10 @@ body > .info {
   color: var(--blue-color);
 }
 
+.info .actions button span {
+  width: 100%; /* action 이름 가운데 정렬*/
+  text-align: center;
+}
 /* Channel Description */
 .info .channel {
   /* metaData(프로필 사진과 채널 정보)와 subscribe를 양 끝에 배치 */
@@ -191,11 +196,12 @@ body > .info {
 
 .upNext .item {
   display: flex;
+  margin-top: var(--padding);
 }
 /* 썸네일 */
 .upNext .item .img {
   flex: 1 1 35%;
-  margin-right: calc(var(--padding) / 2);
+  margin-right: var(--padding);
 }
 
 .upNext .item .img img {
@@ -222,4 +228,24 @@ body > .info {
 .upNext .item .moreBtn {
   flex: 1 1 5%;
   height: 100%;
+}
+
+.infoNupNext {
+  display: flex;
+  flex-direction: column;
+}
+/* Desktop Size 일 때 */
+@media screen and (min-width: 768px) {
+  .infoNupNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
+  /* info 와 upNext 섹션이 차지하는 화면비율 조정 */
+  body .infoNupNext > .info {
+    flex: 1 1 55%;
+  }
+
+  .upNext {
+    flex: 1 1 45%;
+  }
 }
