@@ -73,11 +73,8 @@ header .icons .fa-search {
   max-width: 1000px;
 }
 /* Video Info */
-.info {
+body > .info {
   padding: var(--padding);
-}
-
-.info .metaData {
 }
 
 .info .metaData .hashtags {
@@ -108,7 +105,7 @@ header .icons .fa-search {
   font-size: var(--font-small);
   color: var(--grey-dark-color);
 }
-
+/* Action Button */
 .info .actions {
   display: flex;
   justify-content: space-around;
@@ -116,18 +113,66 @@ header .icons .fa-search {
 }
 
 .info .actions button {
+  /* icon과 span을 세로로 나열 */
   display: flex;
   flex-direction: column;
+  /* icon과 span Font Style */
   font-size: var(--font-small);
   color: var(--grey-dark-color);
 }
 
 .info .actions button i {
-  margin: 0 auto;
+  margin: 0 auto; /* icon 가운데 정렬 */
   margin-bottom: calc(var(--padding) / 2);
-  font-size: 16px;
+  font-size: 16px; /* icon size 덮어쓰기 */
 }
 
 .info .actions button i.active {
   color: var(--blue-color);
+}
+
+/* Channel Description */
+.info .channel {
+  /* metaData(프로필 사진과 채널 정보)와 subscribe를 양 끝에 배치 */
+  display: flex;
+  justify-content: space-between;
+  /* 위아래 간격 두기 */
+  padding: calc(var(--padding) / 2) 0;
+  /* 위아래 선 배치 */
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.info .channel .metaData {
+  /* 프로필 사진과 채널 정보를 가로로 나열 */
+  display: flex;
+  /* 수직으로 가운데 정렬 */
+  align-items: center;
+}
+/* Profile image */
+.info .channel .metaData img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+/* Channel info */
+.info .channel .metaData .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: calc(var(--padding) / 2);
+}
+
+.info .channel .metaData .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metaData .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+/* Subscribe Button */
+.info .channel .subscribe {
+  text-transform: uppercase; /* 소문자를 대문자로 */
+  color: var(--red-color);
+  font-size: var(--font-medium);
 }
