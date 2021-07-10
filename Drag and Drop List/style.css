@@ -44,6 +44,7 @@ header {
   background-color: rgba(0, 0, 0, 0.1);
   margin: 0 15px; /* 각 list 사이에 간격을 줌 */
   padding: 8px;
+  transition: all 0.2s linear;
 }
 
 .lists .list .list-item {
