@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Helvetica, sans-serif;
+  background-color: cadetblue;
+}
+
+.app {
+  display: flex;
+  flex-direction: column; /* header, lists를 세로로 나열 */
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center; /* flex box를 가운데 정렬 */
+  align-items: center; /* flex box를 수직으로 가운데 정렬 */
+  height: 60px;
+}
+
+.lists {
+  display: flex;
+  flex: 1; /* lists의 크기는 부모 크기(가로 100%)로 결정됨 */
+  width: 100%;
+  overflow-x: scroll; /* list 갯수 증가 시 가로 스크롤 */
+}
+
+.lists .list {
+  display: flex;
+  flex: 1; /* 각각의 list가 동일한 크기(width, height)로 할당됨  */
+  flex-flow: column; /* list-item를 세로로 나열 */
+  /* 각 list의 크기 지정 */
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  height: 100%;
+  min-height: 150px;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 15px; /* 각 list 사이에 간격을 줌 */
+  padding: 8px;
+}
+
+.lists .list .list-item {
+  background-color: white;
+  padding: 13px 20px;
+  border-radius: 8px; /* 모서리의 둥글기 */
+  margin: 4px;
+}
