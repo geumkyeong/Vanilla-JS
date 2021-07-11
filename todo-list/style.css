@@ -1,0 +1,16 @@
+body {
+  font-family: "Roboto", Helvetica, sans-serif;
+}
+
+h1 {
+  color: rgb(39, 154, 241);
+  transition: color 0.5s ease-in-out;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.clicked {
+  color: rgb(96, 101, 111);
+}
