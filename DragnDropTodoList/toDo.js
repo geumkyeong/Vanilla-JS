@@ -4,12 +4,18 @@ const firstList = document.querySelector('.lists > .list:first-child');
 
 const TODOS_LIST = 'toDos';
 
+let toDos = [];
+
+function saveToDos() {
+    // object to string
+    localStorage.setItem(TODOS_LIST, JSON.stringify(toDos));
+}
+
 function paintToDo(text) {
-    console.log('input text: ', text)
-    // <li class="list-item" draggable="true">List Item 1</li>
     const li = document.createElement('li');
     const deleteBtn = document.createElement('button');
     const span = document.createElement('span');
+    const newId = toDos.length + 1;
 
     span.textContent = text;
     deleteBtn.textContent = '❌';
@@ -19,6 +25,14 @@ function paintToDo(text) {
     li.appendChild(deleteBtn);
     li.appendChild(span);
     firstList.appendChild(li);
+    // 객체 배열 만든 뒤, localStorage에 저장
+    const toDoObj = {
+        id: newId,
+        text: text
+    };
+
+    toDos.push(toDoObj);
+    saveToDos();
 }
 
 function handleSubmit(e) {
@@ -34,7 +48,12 @@ function handleSubmit(e) {
 function loadToDos() {
     const loadedToDos = localStorage.getItem(TODOS_LIST);
     if(loadedToDos !== null) {
-
+        // string to object
+        const parsedToDos = JSON.parse(loadedToDos);
+        // 각 item을 순서대로 불러옴
+        parsedToDos.forEach(function(toDo){
+            paintToDo(toDo.text);
+        });
     }
 }
 

@@ -63,3 +63,7 @@ header {
   border-radius: 8px; /* 모서리의 둥글기 */
   margin: 4px;
 }
+
+.lists .list .list-item span {
+  margin-left: 8px;
+}
