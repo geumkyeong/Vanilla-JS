@@ -6,6 +6,21 @@ const TODOS_LIST = 'toDos';
 
 let toDos = [];
 
+function deleteToDo(e) {
+   const btn = e.target;
+   const li = btn.parentNode;
+   const ul = li.parentNode;
+
+   ul.removeChild(li);
+    // cleanToDos <-> toDos 비교 후 대체
+   const cleanToDos = toDos.filter(function(toDo){
+    return toDo.id !== Number(li.id);
+   });
+
+   toDos = cleanToDos;
+   saveToDos();
+}
+
 function saveToDos() {
     // object to string
     localStorage.setItem(TODOS_LIST, JSON.stringify(toDos));
@@ -19,6 +34,7 @@ function paintToDo(text) {
 
     span.textContent = text;
     deleteBtn.textContent = '❌';
+    li.id = newId;
 
     li.classList.add('list-item');
     li.setAttribute('draggable', 'true');
@@ -33,6 +49,8 @@ function paintToDo(text) {
 
     toDos.push(toDoObj);
     saveToDos();
+    // toDo item 삭제
+    deleteBtn.addEventListener('click', deleteToDo);
 }
 
 function handleSubmit(e) {
