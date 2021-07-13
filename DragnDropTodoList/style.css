@@ -1,3 +1,21 @@
+:root {
+  /* Colors */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #343434;
+  --grey-light-color: #e0e0e0;
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +24,7 @@
 
 body {
   font-family: "Roboto", Helvetica, sans-serif;
-  background-color: white;
+  background-color: var(--white-color);
 }
 
 button,
@@ -15,6 +33,63 @@ button:focus {
   border: none;
   outline: none;
   background: transparent;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__content {
+  position: relative;
+  top: 0;
+  width: 20%;
+  text-align: center;
+  background-color: var(--white-color);
+  padding: 50px 100px;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  animation: fade-in 1s;
+}
+
+/* Modal buttons */
+#todo_submit,
+#close {
+  width: 15%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .app {
@@ -46,7 +121,7 @@ header {
   position: relative;
 
   list-style: none;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--grey-light-color);
   margin: 0 15px; /* 각 list 사이에 간격을 줌 */
   padding: 60px 1rem 0.5rem;
   transition: all 0.2s linear;
@@ -56,8 +131,8 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #343434;
-  color: #f3f3f3;
+  background-color: var(--grey-dark-color);
+  color: var(--white-color);
   margin: 0;
   width: 100%;
   height: 58px;
@@ -66,11 +141,15 @@ header {
 
 #addBtn {
   padding: 0.5rem 1rem;
+  border-radius: 4px;
   background-color: #ccc;
   width: 100%;
   font-size: 1.5rem;
   margin: 0.5rem 0;
-  border-radius: 4px;
+}
+
+#addBtn:hover {
+  background-color: #aaa;
 }
 
 .lists .list .list-item {
@@ -79,7 +158,7 @@ header {
   align-items: center;
   position: relative;
   background-color: #fff;
-  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+  box-shadow: rgba(126, 75, 75, 0.1) 0px 0px 0px 1px,
     rgba(15, 15, 15, 0.1) 0px 2px 4px;
   border-radius: 4px;
   padding: 0.5rem 1rem;
@@ -92,8 +171,7 @@ header {
   right: 1rem;
   top: 0.5rem;
   font-size: 1.3rem;
-  color: #ccc;
-  cursor: pointer;
+  color: var(--grey-light-color);
 }
 
 .lists .list .list-item span {

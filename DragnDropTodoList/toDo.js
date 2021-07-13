@@ -1,3 +1,23 @@
+//modal
+const openBtn = document.querySelector('#addBtn');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.modal__overlay');
+const closeBtn = document.querySelector('#close');
+
+const openModal = () => {
+    modal.classList.remove('hidden');
+}
+
+const closeModal = () => {
+    modal.classList.add('hidden');
+}
+
+openBtn.addEventListener('click', openModal);
+// confirmBtn.addEventListener('click', handleSubmit);
+
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
 /* Drag Event */
 const list_items = document.querySelectorAll('.list-item');
 const lists = document.querySelectorAll('.list');
@@ -56,7 +76,8 @@ function dragDrop () { // 5: 드래그 놓음
 
 // Todo-List
 const toDoForm = document.querySelector('.toDoForm');
-const toDoInput = toDoForm.querySelector('input');
+const toDoInput = toDoForm.querySelector('#todo_input');
+const submitBtn = document.querySelector('#todo_submit');
 const firstList = document.querySelector('.lists > .list:first-child');
 
 const TODOS_LIST = 'toDos';
@@ -130,10 +151,12 @@ function paintToDo(text, parentId) {
 function handleSubmit(e) {
     e.preventDefault();
     // 입력창에 입력한 내용 넘기기
-    const currentValue = toDoInput.value;
-    paintToDo(currentValue, null);
-    toDoInput.value = '';
-    toDoInput.focus();
+    if(toDoInput.value !== ''){
+        const currentValue = toDoInput.value;
+        paintToDo(currentValue, null);
+        toDoInput.value = '';
+        toDoInput.focus();
+    }
 }
 
 // localStorage에 저장된 toDos 배열을 화면에 띄우기
@@ -162,6 +185,7 @@ function updateToDos(toDo) {
 function init() {
     loadToDos();
     toDoForm.addEventListener('submit', handleSubmit);
+    toDoForm.addEventListener('submit', closeModal);
 }
 
 init();

@@ -11,10 +11,19 @@
     <div class="app">
         <header>
             <h1>Todo List</h1>
-            <form action="" class="toDoForm">
-                <input type="text" placeholder="Write a Todo">
-                <button>등록</button>
-            </form>
+            <div class="modal hidden">
+                <div class="modal__overlay">
+                    
+                </div>
+                <div class="modal__content">
+                    <h1>Add Todo</h1>
+                    <form action="" class="toDoForm">
+                        <input type="text" name="" id="todo_input">
+                        <input type="submit" value="✔" id="todo_submit">
+                        <button id="close">❌</button>
+                    </form>
+                </div>
+            </div>
         </header>
         <div class="lists">
             <div id="1" class="list">
