@@ -5,7 +5,7 @@ let draggedItem = null; // 전역변수
 
 for(let i = 0; i < list_items.length; i++){
     const item = list_items[i];
-
+    
     item.addEventListener('dragstart', function () { // 1: 드래그 시작
         draggedItem = item; // 현재 선택된 item을 전역변수에 저장
         setTimeout(function () {
@@ -19,7 +19,7 @@ for(let i = 0; i < list_items.length; i++){
             draggedItem = null;
         }, 0);
     });
-    
+        
     for(let j = 0; j < lists.length; j++){
         const list = lists[j];
         
