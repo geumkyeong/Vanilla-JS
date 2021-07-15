@@ -58,21 +58,33 @@ button:focus {
 .modal__content {
   position: relative;
   top: 0;
-  width: 20%;
+  width: 25%;
   text-align: center;
+
   background-color: var(--white-color);
   padding: 50px 100px;
 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   animation: fade-in 1s;
 }
+.modal__content h1 {
+  flex: 1;
+  text-align: center;
+}
 
+#todo_input {
+  width: 100%;
+  margin: 15px 0;
+  padding: 15px 20px;
+}
 /* Modal buttons */
 #todo_submit,
 #close {
-  width: 15%;
+  font-size: var(--font-large);
   text-align: center;
+  width: 15%;
   padding: 0.5rem 1rem;
+  margin: 0 15px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -99,12 +111,12 @@ button:focus {
   height: 100vh;
 }
 
-header {
+.app header {
   display: flex;
   flex-flow: column;
   justify-content: center; /* flex box를 가운데 정렬 */
   align-items: center; /* flex box를 수직으로 가운데 정렬 */
-  height: 100px;
+  height: 80px;
 }
 
 .lists {
@@ -122,7 +134,7 @@ header {
 
   list-style: none;
   background-color: var(--grey-light-color);
-  margin: 0 15px; /* 각 list 사이에 간격을 줌 */
+  margin: 15px; /* 각 list 사이에 간격을 줌 */
   padding: 60px 1rem 0.5rem;
   transition: all 0.2s linear;
 }
