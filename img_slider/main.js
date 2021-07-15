@@ -8,6 +8,7 @@ let index = 0;
 let lastIndex = slides.length-1; // 2
 const slideWidth = slides[0].clientWidth; // *Slider 크기(579px)
 
+// 슬라이드 버튼 클릭 시 이벤트
 nextBtn.addEventListener('click', () => {
     items.forEach((item) => { item.classList.remove('active'); }); // 활성화된 Active Style 초기화
     slidesContainer.style.transition = "all 0.3s ease-in-out"; // 슬라이딩 애니메이션
@@ -49,4 +50,16 @@ prevBtn.addEventListener('click', () => {
         items[index].classList.add('active'); // 현재 아이템 Active 하기
         // console.log('Current Direction: ', slidesContainer.style.transform);
     }
+});
+
+items.forEach((item, i) => {
+    // 아이템 클릭 시 이벤트
+    item.addEventListener('click', () => {
+        items.forEach((item) => item.classList.remove("active")); // Active 초기화
+        // 현재 아이템 Active 하기
+        index = i;
+        item.classList.add('active');
+        // 해당 슬라이드로
+        slidesContainer.style.transform = `translateX(${-slideWidth * index}px)`;
+    });
 });
